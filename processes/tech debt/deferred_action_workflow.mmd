@@ -1,0 +1,31 @@
+```mermaid
+flowchart TD
+    A[Deferred Action Spawned] --> B{Impact Assessment}
+    B -->|Has Impact| C[Classify as Deferred Action]
+    B -->|No Impact| D[Classify as Housekeeping]
+    
+    C --> R[Document Reason with Priority Work Item Link]
+    R --> E[Estimate Immediate Fix Cost]
+    E --> F[Optional: Assign Criticality]
+    F --> G[Set Expiration Timeline]
+    
+    G --> H{Before Expiration?}
+    H -->|Yes| I[Implement as Sprint Item]
+    H -->|No| J[Accept Impact]
+    
+    I --> K[Compare Estimates]
+    K --> L[Document Differences]
+    
+    J --> M[Mark as 'Won't Do' or 'Not Needed']
+    
+    D --> N[Add TODO in Code]
+    N --> O[Wait for 'Lull in Combat']
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#fbb,stroke:#333,stroke-width:2px
+    style J fill:#fbb,stroke:#333,stroke-width:2px
+    style I fill:#bfb,stroke:#333,stroke-width:2px
+    style R fill:#bfb,stroke:#333,stroke-width:2px
+``` 
